@@ -60,7 +60,16 @@ app.get("/api/waitlist", function(req, res) {
 
 // Posts
 app.post("/api/booked", function(req, res) {
-    
+  var newReservation = req.body;
+  newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
+if (booked.length <= 5) {
+  booked.push(newReservation);
+}
+else {
+  reservations.push(newReservation);
+}
+res.json(newReservation); 
+  
 });
 
 // Starts the server to begin listening
