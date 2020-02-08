@@ -60,8 +60,7 @@ app.get("/api/waitlist", function(req, res) {
 
 // Posts
 app.post("/api/booked", function(req, res) {
-  
-  
+    
 });
 
 // Starts the server to begin listening
