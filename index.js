@@ -45,6 +45,10 @@ app.get("/addreservation", function(req, res) {
   res.sendFile(path.join(__dirname, "reservation.html"));
 });
 
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
+});
+
 // Displays all Reservations
 app.get("/api/booked", function(req, res) {
   return res.json(booked);
@@ -52,7 +56,9 @@ app.get("/api/booked", function(req, res) {
 
 app.get("/api/waitlist", function(req, res) {
     return res.json(reservations);
-  });
+});
+
+
 
 
 
