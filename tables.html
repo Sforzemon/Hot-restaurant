@@ -24,8 +24,11 @@
       <div class="card w-75 mx-auto">
         <h5 class="card-header">Current Reservations:</h5>
         <div class="card-body">
-            <form id="tables">
-              </form>
+            <form id="booked">
+              <h2>
+                <span class="label label-primary">1</span>
+              </h2>
+            </form>
         </div>
       </div>
       <br>
@@ -34,7 +37,7 @@
         <h5 class="card-header">Wait List:</h5>
         <div class="card-body">
             <form id="reservations">
-              </form>
+            </form>
         </div>
       </div>
       <br>
@@ -49,10 +52,35 @@
     </footer>
 
 
-
-    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript">
+      $(document).on("load", function() {
+  
+  
+        $.get("/api/booked/" + booked, function(data) {
+          console.log(data);
+          for (var i = 0; i < booked.length; i++) {
+            if (data) {
+
+              var h2 = $("<h2>").text(data.booked[i].id);
+              var span = $("<span>").addClass("label label-primary");
+              span.text(`${data.booked[i]} |`);
+              $("#booked").append(h2, span);
+          } else {
+            console.log("say what again, I dare you")
+          }
+
+
+
+          }
+          
+        });
+      });
+  
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

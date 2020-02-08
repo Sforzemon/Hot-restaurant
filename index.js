@@ -14,23 +14,13 @@ app.use(express.json());
 // Reservation Data
 var booked = [
 
-    {
-      name: "",
-      phone: "",
-      email: "",
-      id: ""
-    }
+    
 
 ];
 
 var reservations = [
 
-    {
-      name: "",
-      phone: "",
-      email: "",
-      id: ""
-    }
+    
 
 ];
 
