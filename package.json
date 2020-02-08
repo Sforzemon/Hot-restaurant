@@ -1,0 +1,25 @@
+{
+  "name": "hot-restaurant",
+  "version": "1.0.0",
+  "description": "Resturant Reservations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sforzemon/Hot-restaurant.git"
+  },
+  "keywords": [
+    "package"
+  ],
+  "author": "PP, PD, MH, JA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sforzemon/Hot-restaurant/issues"
+  },
+  "homepage": "https://github.com/Sforzemon/Hot-restaurant#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
