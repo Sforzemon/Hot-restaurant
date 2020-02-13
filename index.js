@@ -12,18 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Reservation Data
-var booked = [
+var booked = [];
 
-    
-
-];
-
-var reservations = [
-
-    
-
-];
-
+var reservations = [];
 
 
 // Routes 
@@ -37,7 +28,9 @@ app.get("/addreservation", function(req, res) {
 
 app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
+  
 });
+
 
 // Displays all Reservations
 app.get("/api/booked", function(req, res) {

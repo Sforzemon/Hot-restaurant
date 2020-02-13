@@ -25,9 +25,7 @@
         <h5 class="card-header">Current Reservations:</h5>
         <div class="card-body">
             <form id="booked">
-              <h2>
-                <span class="label label-primary">1</span>
-              </h2>
+              
             </form>
         </div>
       </div>
@@ -46,8 +44,8 @@
         <div class="footer w-75 mx-auto">
             <p>Control Panel</p>
             <a class="nav-link d-inline" href="#">Clear Tables </a>| 
-           <a class="nav-link d-inline" href="#"> API Table Link </a>|
-           <a class="nav-link d-inline" href="#"> API Wait List</a>
+           <a class="nav-link d-inline" href="/api/booked"> API Table Link </a>|
+           <a class="nav-link d-inline" href="/api/waitlist"> API Wait List</a>
         </div>
     </footer>
 
@@ -55,17 +53,17 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript">
-      $(document).on("load", function() {
+      $(document).ready(function() {
   
   
-        $.get("/api/booked/" + booked, function(data) {
+        $.get("/api/booked", function(data) {
           console.log(data);
-          for (var i = 0; i < booked.length; i++) {
+          for (var i = 0; i < data.length; i++) {
             if (data) {
 
-              var h2 = $("<h2>").text(data.booked[i].id);
+              var h2 = $("<h2>").text(data[i].id);
               var span = $("<span>").addClass("label label-primary");
-              span.text(`${data.booked[i]} |`);
+              span.text(`${i+1} |`);
               $("#booked").append(h2, span);
           } else {
             console.log("say what again, I dare you")
